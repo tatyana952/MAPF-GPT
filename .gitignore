@@ -1,0 +1,9 @@
+
+# Local experiment artifacts
+/weights/
+__pycache__/
+*.pyc
+*.so
+/mapf_gpt/.rendered.*
+*.before_animation_fix
+*:Zone.Identifier

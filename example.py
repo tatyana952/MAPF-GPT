@@ -39,6 +39,7 @@ def main():
         return
 
     env_cfg = Environment(
+        with_animation=args.animation,
         observation_type="MAPF",
         on_target="nothing",
         map_name=args.map_name,
@@ -58,7 +59,6 @@ def main():
     torch.backends.cudnn.deterministic = True
 
     env = create_eval_env(env_cfg)
-    env.enable_animation()
 
     algo = MAPFGPTInference(MAPFGPTInferenceConfig(path_to_weights=f'weights/MAPF-GPT-{args.model}.pt', device=args.device))
     algo.reset_states()
